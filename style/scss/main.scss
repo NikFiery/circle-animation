@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100vh;
+    background: #1a1a1a;
+}
+
+.eyes {
+    display: flex;
+}
+
+.eye {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, transparent, transparent 40%, #ff00dd);
+    border-radius: 50%;
+    animation: eye 1.5s linear infinite;
+}
+
+@keyframes eye {
+
+    0% {
+        transform: rotate(0deg);
+        filter: hue-rotate(0);
+    }
+
+    100% {
+        transform: rotate(365deg);
+        filter: hue-rotate(365deg);
+    }
+}
+
+.eye::before {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    content: '';
+    z-index: 5;
+}
+
+.eye::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient(45deg, transparent, transparent 40%, #ff00dd);
+    border-radius: 50%;
+    content: '';
+    z-index: 1;
+    filter: blur(30px);
+}
+
+.smile {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin-top: 30px;
+    background: linear-gradient(45deg, transparent, transparent 40%, #ff00dd);
+    border-radius: 50%;
+    animation: smile 1.3s ease-in infinite;
+    animation-timing-function: cubic-bezier(1, .57, .92, 1.98);
+}
+
+@keyframes smile {
+
+    0% {
+        height: 100px;
+        transform: rotate(-5deg);
+        filter: hue-rotate(0);
+    }
+
+    13% {
+        height: 80px;
+    }
+
+    25% {
+        height: 60px;
+        transform: rotate(5deg);
+        filter: hue-rotate(50);
+    }
+
+    37% {
+        height: 73px;
+    }
+
+    50% {
+        height: 95px;
+        transform: rotate(0deg);
+        filter: hue-rotate(100);
+    }
+
+    62% {
+        height: 73px;
+    }
+
+    75% {
+        height: 60px;
+        transform: rotate(5deg);
+        filter: hue-rotate(150);
+    }
+
+    87% {
+        height: 80px;
+    }
+
+    100% {
+        height: 100px;
+        transform: rotate(-5deg);
+        filter: hue-rotate(365deg);
+    }
+}
+
+.smile::before {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    content: '';
+    z-index: 5;
+}
+
+.smile::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient(365deg, transparent 20%, transparent 20%, #ff0000);
+    border-radius: 50%;
+    content: '';
+    z-index: 1;
+    filter: blur(20px);
+}
